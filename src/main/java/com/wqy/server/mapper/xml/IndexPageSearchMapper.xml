@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wqy.server.mapper.IndexPageSearchMapper">
+
+    <select id="indexCarSearch" resultType="com.wqy.server.dto.IndexCarSearchDTO">
+        SELECT car.id,
+               car.power_type,
+               car.oil_volume,
+               car.`name`,
+               car.emission,
+               car.rent_price,
+               car.box,
+               car.sits,
+               car.transmission,
+               car.satisfy_rate,
+               car.car_type,
+               car.is_carpooling,
+               car.current_store,
+               car.arrival_store,
+               car.current_city,
+               car.arrival_city,
+               store.`location`
+        FROM t_car car
+                 LEFT JOIN t_store store ON car.current_store = store.`name`
+        WHERE store.`name` = #{name}
+    </select>
+
+</mapper>

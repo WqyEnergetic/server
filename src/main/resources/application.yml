@@ -1,0 +1,38 @@
+server:
+  port: 57100
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    lazy-loading-enabled: true #延迟加载的全局开关
+  mapper-locations: classpath:com/wqy/server/mapper/xml/*.xml
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: rent-car
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/rent_car?serverTimezone=GMT%2B8&characterEncoding=utf-8
+  redis:
+    host: 192.168.13.130
+    port: 6379
+    password: root
+  lettuce:
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+      max-wait: 100
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 100MB
+
+#logging:
+#  pattern:
+#    console: "[%level] %d{yyyy-MM-dd HH:mm:ss} %c.%method [%thread] %msg %n"
