@@ -23,3 +23,4 @@
 另外
 * 1.实现支付功能使用了微信支付接口
 * 2.app中的登录功能使用了短信验证码，短信验证码的第三方接口由阿里云短信平台提供
+<a href="https://github.com/WqyEnergetic/rentcar-webpage">点击此处获取配套的前端代码</a>
